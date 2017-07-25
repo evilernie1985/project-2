@@ -1,6 +1,8 @@
-# Your Project Name
+# The Social Drinker
 
-This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
+The Social Drinker uses an API to allow users to query the wine-searcher database using keywords (e.g. name, brand etc) in order to receive all kinds of useful information about said wines (e.g. pricing, availability, scores, region, grape).
+
+Users are able to add returned results to a "wish-list" that may be viewed by other users of the site, and/or write reviews/tasting notes about selected wines. Other users may subsequently view and leave comments on these reviews.
 
 ## Getting Started
 
@@ -62,4 +64,3 @@ Did you collaborate with others on this project, list them here
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
-
