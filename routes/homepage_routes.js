@@ -22,7 +22,9 @@ router.get('/signup', function (req, res) {
 
 router.post('/signup', passport.authenticate('local-signup', {
   successRedirect: '/profile', // redirects to secure profile page
-  failureRedirect: '/signup' // redirects back to signup page
+  failureRedirect: '/signup', // redirects back to signup page
+  failureFlash: true // enables flash message
+
 }))
 
 module.exports = router

@@ -9,9 +9,9 @@ const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const flash = require('connect-flash')
 
-//connect to mongodb =========================================
+// connect to mongodb =========================================
 
-const url = 'mongodb://localhost:27017'
+const url = 'mongodb://localhost:27017/wdi-project-2'
 
 mongoose.Promise = global.Promise
 mongoose.connect(url, {
@@ -23,16 +23,24 @@ function (err) {
   console.log(err)
 }
 
-//initialize passport ========================================
+// setup express session ===================================
+
+app.use(session({
+  secret: 'shesellsseashells',
+  resave: false,
+  saveUninitialized: true
+}))
+
+// initialize passport  ====================================
+
 const passport = require('./config/passport')
 
-app.use(session({ secret: 'shesellsseashells'}))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(flash()
 )
 
-// initialise handlebars =====================================
+// initialize handlebars =====================================
 
 app.engine('handlebars', exphbs({
   defautLayout: 'main'
@@ -40,7 +48,8 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars')
 
 app.use(morgan('dev'))
-// app.use(bodyParser)
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 // app.use(cookieParser)
 
 const homepageRoutes = require('./routes/homepage_routes')
