@@ -52,13 +52,15 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 // app.use(cookieParser)
 
-// Routes ====================================================
+// Routes ===================================================
 
 const homepageRoutes = require('./routes/homepage_routes')
 app.use('/', homepageRoutes)
 
 const profileRoute = require('./routes/profile_route')
 app.use('/', profileRoute)
+
+// Open port ===============================================
 
 const port = process.env.PORT || 9000
 app.listen(port, function () {

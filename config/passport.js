@@ -53,4 +53,28 @@ function (req, email, password, done) {
   })
 }))
 
+passport.use('local-login', new LocalStrategy({
+  usernameField: 'email',
+  passwordField: 'password',
+  passReqToCallback: true
+},
+
+function (req, email, password, done) {
+// check db for email that matches form email
+// to see if user exists
+  User.findOne({ 'local.email': email}, function (err, user) {
+    if (err) {
+      return done(err)
+    }
+
+    if (!user) return done(null, false, req.flash('loginMessage', 'User not found'))
+
+    if (!user.validPassword(password)) {
+      return done(null, false, req.flash('loginMessage', 'Wrong password entered.'))
+    }
+
+    return done(null, user)
+  })
+}))
+
 module.exports = passport

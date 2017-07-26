@@ -10,9 +10,15 @@ router.get('/', function (req, res) {
 
 // ==Login==
 
-router.get('/login', function (req, res) {
-  res.render('login', { message: req.flash('loginMessage')})
-})
+// router.get('/', function (req, res) {
+//   res.render('login', { message: req.flash('loginMessage')})
+// })
+
+router.post('/', passport.authenticate('local-login', {
+  successRedirect: '/profile', // redirect to secure profile
+  failureRedirect: '/', // redirect back to login page
+  failureFlash: true // enable flash messages
+}))
 
 // ==Signup==
 
