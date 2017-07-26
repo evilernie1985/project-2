@@ -1,18 +1,21 @@
 const express = require('express')
 const router = express.Router()
 
-// ==Profile Page==
+// Profile Page ==============================================
 
-app.get('/profile', function (req, res) {
+router.get('/profile', function (req, res) {
   res.render('profile', {
     user: req.user
   })
 })
 
-// == isLoggedIn middleware==
+// isLoggedIn middleware ======================================
+
 function isLoggedIn (req, res, next) {
   if (req.isAuthenticated()) {
     return next()
   }
   res.redirect('/')
 }
+
+module.exports = router
