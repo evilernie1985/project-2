@@ -55,6 +55,7 @@ app.engine('handlebars', exphbs({
   defaultLayout: 'main'
 }))
 app.set('view engine', 'handlebars')
+
 // utility middleware =======================================
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
@@ -69,6 +70,10 @@ app.get('/', function (req, res) {
 
 const apodRoutes = require('./routes/apod_routes')
 app.use('/apod', apodRoutes)
+
+const userRoutes = require('./routes/user_routes')
+app.use('/login', userRoutes)
+app.use('/signup', userRoutes)
 
 // Open port ===============================================
 

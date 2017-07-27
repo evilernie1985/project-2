@@ -4,7 +4,7 @@ const router = express.Router()
 // Profile Page ==============================================
 
 router.get('/profile', function (req, res) {
-  res.render('profile', {
+  res.render('profile/index', {
     user: req.user
   })
 })

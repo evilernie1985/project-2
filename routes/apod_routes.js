@@ -9,8 +9,15 @@ router.get('/', function (req, res) {
 
 router.post('/search', function (req, res) {
   res.send(req.body)
-  
-
 })
+
+// isLoggedIn middleware ======================================
+
+function isLoggedIn (req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+  res.redirect('/')
+}
 
 module.exports = router
