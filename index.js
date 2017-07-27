@@ -1,5 +1,5 @@
+require('dotenv').config()
 const express = require('express')
-const app = express()
 const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
 const morgan = require('morgan')
@@ -16,17 +16,19 @@ const url = 'mongodb://localhost:27017/wdi-project-2'
 mongoose.Promise = global.Promise
 mongoose.connect(url, {
   useMongoClient: true
-}).then(function () {
-  console.log('connected to mongo successfully')
-}),
-function (err) {
-  console.log(err)
-}
+}).then(
+  function () {
+    console.log('connected to mongo successfully')
+  },
+  function (err) {
+    console.log(err)
+  }
+)
 
 // setup express session ===================================
-
+const app = express()
 app.use(session({
-  secret: 'shesellsseashells',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
@@ -37,32 +39,33 @@ const passport = require('./config/passport')
 
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(flash()
-)
+app.use(flash())
 
 // initialize handlebars =====================================
 
+app.use(express.static('public'))
+
 app.engine('handlebars', exphbs({
-  defautLayout: 'main'
+  defaultLayout: 'main'
 }))
 app.set('view engine', 'handlebars')
-
+// utility middleware =======================================
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
-// app.use(cookieParser)
+app.use(cookieParser())
 
 // Routes ===================================================
+app.get('/', function (req, res) {
+  res.render('index')
+})
 
-const homepageRoutes = require('./routes/homepage_routes')
-app.use('/', homepageRoutes)
-
-const profileRoute = require('./routes/profile_route')
-app.use('/', profileRoute)
+const apodRoutes = require('./routes/apod_routes')
+app.use('/apod', apodRoutes)
 
 // Open port ===============================================
 
-const port = process.env.PORT || 9000
+const port = process.env.PORT || 8000
 app.listen(port, function () {
   console.log('express is running on port ' + port)
 })
