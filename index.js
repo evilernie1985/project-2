@@ -43,6 +43,9 @@ const passport = require('./config/passport')
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(flash())
+app.locals = {
+  API_KEY: process.env.API_KEY
+}
 
 // initialize handlebars =====================================
 
