@@ -11,7 +11,7 @@ const flash = require('connect-flash')
 
 // connect to mongodb =========================================
 
-const url = 'mongodb://localhost:27017/wdi-project-2'
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/wdi-project-2'
 
 mongoose.Promise = global.Promise
 mongoose.connect(url, {
@@ -28,6 +28,9 @@ mongoose.connect(url, {
 // setup express session ===================================
 const app = express()
 app.use(session({
+  store: new MongoStore({
+    url: url
+  }),
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
