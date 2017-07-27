@@ -11,7 +11,7 @@ $(document).ready(function () {
     console.log($('#endDate')[0].value)
     startDate = $('#startDate')[0].value
     endDate = $('#endDate')[0].value
-    var apod_url = `https://api.nasa.gov/planetary/apod?start_date=${startDate}&end_date=${endDate}${apiKey}`
+    var apod_url = `https://api.nasa.gov/planetary/apod?start_date=${startDate}&end_date=${endDate}&api_key=${apiKey}`
     console.log(apod_url)
 
     $.get(apod_url)
