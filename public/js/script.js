@@ -3,7 +3,7 @@ $(document).ready(function () {
   // 2 methods = GET and POST
   var startDate
   var endDate
-  const apiKey = acvEahbNOejE5424HVtjzQV3bxdhnEPsCNZI1LTK
+  const apiKey = 'acvEahbNOejE5424HVtjzQV3bxdhnEPsCNZI1LTK'
   var $ul = $('.apod-list')
 
   $('.searchButton').on('click', function (e) {
