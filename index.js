@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser')
 // const passport = require('passport')
 const session = require('express-session')
 const flash = require('connect-flash')
+const MongoStore = require('connect-mongo')
 
 // connect to mongodb =========================================
 
@@ -59,6 +60,7 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 
 // Routes ===================================================
+
 app.get('/', function (req, res) {
   res.render('index')
 })
