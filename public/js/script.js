@@ -3,7 +3,7 @@ $(document).ready(function () {
   // 2 methods = GET and POST
   var startDate
   var endDate
-  var apiKey = process.env.API_KEY
+  var apiKey = `&api_key=${API_KEY}`
   var $ul = $('.apod-list')
 
   $('.searchButton').on('click', function (e) {
@@ -11,7 +11,7 @@ $(document).ready(function () {
     console.log($('#endDate')[0].value)
     startDate = $('#startDate')[0].value
     endDate = $('#endDate')[0].value
-    var apod_url = `https://api.nasa.gov/planetary/apod?start_date=${startDate}&end_date=${endDate}&api_key=${apiKey}`
+    var apod_url = `https://api.nasa.gov/planetary/apod?start_date=${startDate}&end_date=${endDate}${apiKey}`
     console.log(apod_url)
 
     $.get(apod_url)
