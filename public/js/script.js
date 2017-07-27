@@ -3,7 +3,7 @@ $(document).ready(function () {
   // 2 methods = GET and POST
   var startDate
   var endDate
-  var apiKey = `&api_key=${API_KEY}`
+  var apiKey = process.env.API_KEY
   var $ul = $('.apod-list')
 
   $('.searchButton').on('click', function (e) {
