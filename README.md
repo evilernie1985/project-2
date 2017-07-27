@@ -1,8 +1,8 @@
-# The Social Drinker
+# Star Gazer
 
-The Social Drinker uses an API to allow users to query the wine-searcher database using keywords (e.g. name, brand etc) in order to receive all kinds of useful information about said wines (e.g. pricing, availability, scores, region, grape).
+Star Gazer is a web app that uses the National Aeronautics and Space Agency (NASA) Astronomy Picture of the Day (APOD) API to allow users to query the NASA APOD database using a date-range (i.e. a start-date and and end-date); pictures falling within the date-range are returned in a list format, along with their respective dates, titles, and descriptions.
 
-Users are able to add returned results to a "wish-list" that may be viewed by other users of the site, and/or write reviews/tasting notes about selected wines. Other users may subsequently view and leave comments on these reviews.
+Users are then able to add selected results to a "favorites-list" that may be viewed by other users of the site.
 
 ## Getting Started
 

@@ -1,9 +1,11 @@
+require('dotenv').config()
+
 $(document).ready(function () {
   // run ajax now
   // 2 methods = GET and POST
   var startDate
   var endDate
-  var apiKey = process.env.API_KEY
+  const apiKey = process.env.API_KEY
   var $ul = $('.apod-list')
 
   $('.searchButton').on('click', function (e) {
