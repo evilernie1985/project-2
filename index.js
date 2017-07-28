@@ -72,8 +72,8 @@ const apodRoutes = require('./routes/apod_routes')
 app.use('/apod', apodRoutes)
 
 const userRoutes = require('./routes/user_routes')
-app.use('/login', userRoutes)
-app.use('/signup', userRoutes)
+app.use('/users', userRoutes)
+// app.use('/signup', userRoutes)
 
 // Open port ===============================================
 

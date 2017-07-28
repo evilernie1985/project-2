@@ -4,7 +4,7 @@ const passport = require('../config/passport')
 
 // ==Login==
 
-router.get('/', function (req, res) {
+router.get('/login', function (req, res) {
   res.render('user/login', { message: req.flash('loginMessage')})
 })
 
@@ -16,7 +16,7 @@ router.get('/', function (req, res) {
 
 // ==Signup==
 
-router.get('/', function (req, res) {
+router.get('/signup', function (req, res) {
   res.render('user/signup', req.flash('signupMessage'))
 })
 
