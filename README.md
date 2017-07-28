@@ -6,13 +6,12 @@ Users are then able to add selected results to a "favorites-list" that may be vi
 
 ## Getting Started
 
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
+Just enter a start date and and end date and hit the 'Go!' button to return all APOD entries within the date range. Simple.
 
 ### Prerequisites
 
-What is needed to install and run the project, how do we install them
+Nope.
 
-```
 Code example
 ```
 
@@ -33,17 +32,16 @@ until finished
 
 
 ## Tests
-
 Did you write automated tests? If so, how do we run them.
 
-
+Nope.
 ```
 Code example
 ```
 
 ## Live Version
 
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
+Launch: https://polar-lake-12779.herokuapp.com/
 
 ## Built With
 
