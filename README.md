@@ -12,32 +12,15 @@ Just enter a start date and and end date and hit the 'Go!' button to return all 
 
 Nope.
 
-Code example
-```
-
 ### How to Use
 
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
-
-
-```
-Code example
-```
-
-More steps...
-
-```
-until finished
-```
-
+1. Log in to start searching for NASA APODs.
+2. Enter a start-date and end-date to return APOD results within specified date range.
+3. Click the 'Add' button under each result to save each respective result to the user's personal 'favourites list'.
 
 ## Tests
-Did you write automated tests? If so, how do we run them.
 
 Nope.
-```
-Code example
-```
 
 ## Live Version
 
@@ -45,9 +28,31 @@ Launch: https://polar-lake-12779.herokuapp.com/
 
 ## Built With
 
-What did you use to build it, list the technologies, plugins, gems, packages etc.
+1. Node.js
+2. Express.js
+3. MongoDB
+4. Heroku
+5. jQuery
+6. Pure.css
 
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
+Node Package List (managed with Yarn)
+
+a. bcrypt
+b. body-parser
+c. connect-flash
+d. connect-mongo
+e. cookie-parser
+f. dotenv,
+g. express
+h. express-handlebars
+i. express-session
+j. method-override
+k. mongoose
+l. morgan
+m. nodemon
+n. passport
+o. passport-facebook
+p. passport-local"
 
 ## Workflow
 
